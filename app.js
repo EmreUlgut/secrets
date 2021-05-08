@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({
 }));
 
 
-mongoose.connect("mongodb+srv://admin:simplelist135@cluster0.0wtpw.mongodb.net/SL?retryWrites=true&w=majority", {useUnifiedTopology: true})
+mongoose.connect("mongodb+srv://project:<password>@cluster0.04kga.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", {useUnifiedTopology: true})
 
 const userSchema = {
 	email: String,
