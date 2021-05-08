@@ -16,39 +16,36 @@ app.use(bodyParser.urlencoded({
 mongoose.connect("mongodb+srv://admin:simplelist135@cluster0.0wtpw.mongodb.net/SL?retryWrites=true&w=majority", {useUnifiedTopology: true})
 
 const userSchema = {
-	name: String,
-	iotid: String,
 	email: String,
 	password: String
 };
 
-const user = new mongoose.model("users", userSchema);
+const user = new mongoose.model("Users", userSchema);
 
 app.get("/", function (req, res){
 	res.render("home");
 });
 
 app.get("/login", function (req, res){
-	res.sendFile(__dirname + "/views/login.html");
+	res.render("login");
 });
 
 app.get("/register", function (req, res){
-	res.sendFile(__dirname + "/views/register.html");
+	res.render("register");
 });
 
 app.post("/register", function (req, res){
-	const newUser = new user({
-		name: req.body.name,
-		iotid: req.body.iotid,
+	const newUser = new User({
 		email: req.body.username,
 		password: req.body.password
 	});
+	
 	newUser.save(function(err){
 		if(err){
 			console.log(err)
 		}
 		else{
-			res.send();
+			res.render("secrets");
 		}
 	});
 });
