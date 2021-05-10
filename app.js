@@ -18,17 +18,17 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 
-app.use(session({
-  secret: "Our little secret.",
-  resave: false,
-  saveUninitialized: false
-}));
+// app.use(session({
+//   secret: "Our little secret.",
+//   resave: false,
+//   saveUninitialized: false
+// }));
 
-app.use(passport.initialize());
-app.use(passport.session());
+// app.use(passport.initialize());
+// app.use(passport.session());
 
 mongoose.connect("mongodb+srv://project:project123456789@cluster0.04kga.mongodb.net/myDatabase?retryWrites=true&w=majority", {useUnifiedTopology: true});
-mongoose.set("useCreateIndex", true);
+// mongoose.set("useCreateIndex", true);
 
 const userSchema = {
 	email: String,
