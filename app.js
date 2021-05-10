@@ -36,7 +36,7 @@ const userSchema = {
 	secret: String
 };
 
-userSchema.plugin(passportLocalMongoose);
+// userSchema.plugin(passportLocalMongoose);
 
 const User = new mongoose.model("User", userSchema);
 
